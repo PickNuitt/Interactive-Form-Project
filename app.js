@@ -23,7 +23,7 @@ $('#color option:gt()').hide();
     // use a `change` event listener on the “Design” menu `select` element to listen for changes.
     // inside the event listener, you’ll use a conditional to determine what to hide, show and update. 
 $('#design').change(function(e) {
-    if (e === 'selected'){
+    if (e.target === 'selected'){
     $('#color option:lt(5)').show();
     };  
 });

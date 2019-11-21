@@ -26,11 +26,15 @@ $('#color option:gt()').hide();
     // use a `change` event listener on the “Design” menu `select` element to listen for changes.
     // inside the event listener, you’ll use a conditional to determine what to hide, show and update.
 $('#design').change(function(e) {
-    if (e.target === 'selected'){
-    $('#color option:lt(5)').show();
-    };  
+    if ($(event.target).val() === $('#design[value~="js puns"]')) {
+        $('#color').style.display;
+    } else {
+        $('#color:gt(4)').hide();
+    }
 });
 
+console.log($('#design[value~="js puns"]').val());
+console.log($('#design').eq(0).val());
 //activity section
 
 let domElm = $('<div></div>');
@@ -41,3 +45,6 @@ $('.activities').change(function(){
     let act = $('.activites:checkbox').html();
     console.log(act);
 });
+
+
+//payment section 

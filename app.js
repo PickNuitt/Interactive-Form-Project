@@ -11,6 +11,15 @@ $('#title').on('click', function(event){
         $('#other-title').hide();
     };
 });
+// T-Shirt Global Variables
+const $corn = $('#color option[value="cornflowerblue"]');
+const $slate = $('#color option[value="darkslategrey"]');
+const $gold = $('#color option[value="gold"]');
+const $tomato = $('#color option[value="tomato"]');
+const $steel = $('#color option[value="steelblue"]');
+const $dim = $('#color option[value="dimgrey"]');
+
+
 
 // Hide the “Select Theme” `option` element in the “Design” menu.
 $('#design option').eq(0).hide();
@@ -26,15 +35,25 @@ $('#color option:gt()').hide();
     // use a `change` event listener on the “Design” menu `select` element to listen for changes.
     // inside the event listener, you’ll use a conditional to determine what to hide, show and update.
 $('#design').change(function(e) {
-    if ($(event.target).val() === $('#design[value~="js puns"]')) {
-        $('#color').style.display;
-    } else {
-        $('#color:gt(4)').hide();
-    }
+    if ($(e.target).val() === 'js puns') {
+        $tomato.hide();
+        $steel.hide();
+        $dim.hide();
+        $corn.show();
+        $slate.show();
+        $gold.show();
+        
+    } else if ($(e.target).val() === 'heart js') {
+        $corn.hide();
+        $slate.hide();
+        $gold.hide();
+        $tomato.show();
+        $steel.show();
+        $dim.show();
+    };
 });
 
-console.log($('#design[value~="js puns"]').val());
-console.log($('#design').eq(0).val());
+
 //activity section
 
 let domElm = $('<div></div>');

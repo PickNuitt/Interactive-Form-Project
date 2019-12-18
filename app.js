@@ -19,8 +19,6 @@ const $tomato = $('#color option[value="tomato"]');
 const $steel = $('#color option[value="steelblue"]');
 const $dim = $('#color option[value="dimgrey"]');
 
-
-
 // Hide the “Select Theme” `option` element in the “Design” menu.
 $('#design option').eq(0).hide();
 
@@ -56,14 +54,25 @@ $('#design').change(function(e) {
 
 //activity section
 
-let domElm = $('<div></div>');
-domElm.appendTo('.activities');
+let $domElm = $('<div></div>');
+$domElm.appendTo('.activities');
 
+//come up with a dynamic solution that will work even if the cost, day or time of /the activities were changed in the HTML. To do that, we'll:
+    //● Create an element to display the total activity cost
+    //● Listen for changes in the Activity section
+    //● Create helpful variables to store important values
+    //● Update and display the total activity cost
+    //● Disable conflicting activities
+
+// GLobal activity variables
+
+let $act = $('.activites:checkbox').html();
 let activityCost = '0';
-$('.activities').change(function(){
-    let act = $('.activites:checkbox').html();
-    console.log(act);
+
+// Change handler
+$('.activities').change(function(e){
+    let $activityInput = $('.activites');
+    console.log($activityInput.val('type'));
+    console.log(e.target);
 });
 
-
-//payment section 
